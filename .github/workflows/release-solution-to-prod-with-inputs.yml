@@ -44,8 +44,19 @@ on:
         description: 'The tenant id'
         type: string
         required: true
+      PROD_CLIENT_ID: 
+        description: 'The prod client id'
+        type: string
+        required: true
+      PROD_TENANT_ID: 
+        description: 'The prod tenant id'
+        type: string
+        required: true
     secrets:
       envSecret:
+        description: 'The secret value for authentication using SPN'
+        required: true
+      prodenvSecret:
         description: 'The secret value for authentication using SPN'
         required: true
 
