@@ -116,9 +116,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: ${{inputs.PRODUCTION_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
-        client-secret:  ${{ secrets.PowerPlatformUAT }}
-        tenant-id: ${{env.TENANT_ID}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.envSecret }}
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
         force-overwrite: true
         publish-changes: true
