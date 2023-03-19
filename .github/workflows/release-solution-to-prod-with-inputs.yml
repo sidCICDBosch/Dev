@@ -11,7 +11,7 @@ on:
       solution_name:
         description: 'The solution name.'
         type: string
-        default: Test       
+        default: ALMLab       
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'        
         type: string
@@ -29,24 +29,24 @@ on:
        type: string
        default: out/release
       BUILD_ENVIRONMENT_URL:
-        description: 'https://orgb93b78fb.crm.dynamics.com'
+        description: 'Build environment url.'
         type: string
         required: true      
       PRODUCTION_ENVIRONMENT_URL: 
-        description: 'https://orgd59a7a39.crm.dynamics.com'
+        description: 'Production environment url.'
         type: string
         required: true
       CLIENT_ID: 
-        description: 'c90a1c15-93c1-49b8-bbca-61475d6fea9e'
+        description: 'The client id'
         type: string
         required: true
       TENANT_ID: 
-        description: '84f1a83f-7c4c-413f-bca0-92367bc23980'
+        description: 'The tenant id'
         type: string
         required: true
     secrets:
       envSecret:
-        description: 'k_E8Q~7wQjwjDxJhF4ZvwGBxxRtoHpAYphjAjdj8'
+        description: 'The secret value for authentication using SPN'
         required: true
 
 jobs:
