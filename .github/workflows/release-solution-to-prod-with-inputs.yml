@@ -48,7 +48,12 @@ on:
       envSecret:
         description: 'The secret value for authentication using SPN'
         required: true
-
+env:
+#edit your values here production
+  ENVIRONMENT_URL: 'https://orgd59a7a39.crm.dynamics.com'
+  CLIENT_ID: 'c90a1c15-93c1-49b8-bbca-61475d6fea9e'
+  TENANT_ID: '84f1a83f-7c4c-413f-bca0-92367bc23980'
+  
 jobs:
   convert-to-managed:
     runs-on: windows-latest
@@ -116,9 +121,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: ${{inputs.PRODUCTION_ENVIRONMENT_URL}}
-        app-id: ${{inputs.CLIENT_ID}}
-        client-secret: ${{ secrets.envSecret }}
-        tenant-id: ${{inputs.TENANT_ID}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret:  ${{ secrets.PowerPlatformUAT }}
+        tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
         force-overwrite: true
         publish-changes: true
