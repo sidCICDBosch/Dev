@@ -53,7 +53,8 @@ env:
   ENVIRONMENT_URL: 'https://orgd59a7a39.crm.dynamics.com'
   CLIENT_ID: 'c90a1c15-93c1-49b8-bbca-61475d6fea9e'
   TENANT_ID: '84f1a83f-7c4c-413f-bca0-92367bc23980'
-  
+permissions:
+  contents: write  
 jobs:
   convert-to-managed:
     runs-on: windows-latest
